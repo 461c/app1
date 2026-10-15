@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  资源定义的根节点。 > 表示起始标签结束，接下来可放子节点。
+-->
 <resources>
     <!-- 使用 Android 自带主题，让项目保持简单。 -->
+    <!--
+      定义可复用的主题或样式。 name="Theme.LearningApp"：主题名称；parent 继承 Android 自带的浅色无标题栏 Material 主题，无需第三方 UI 库。 parent：继承 Android 自带的 Theme.Material.Light.NoActionBar 主题。 > 表示起始标签结束，接下来可放子节点。
+    -->
     <style name="Theme.LearningApp" parent="android:style/Theme.Material.Light.NoActionBar">
+        <!--
+          设置所属样式的一个属性。 name="android:fontFamily"：设置默认字体为 sans 无衬线字体。
+        -->
         <item name="android:fontFamily">sans</item>
+        <!--
+          设置所属样式的一个属性。 name="android:colorAccent"：将强调色关联到 accent 颜色资源。
+        -->
         <item name="android:colorAccent">@color/accent</item>
+        <!--
+          设置所属样式的一个属性。 name="android:windowLightStatusBar"：true 请求深色状态栏图标，便于在浅色背景上阅读。
+        -->
         <item name="android:windowLightStatusBar">true</item>
+        <!--
+          设置所属样式的一个属性。 name="android:statusBarColor"：请求设置状态栏背景色；实际效果可能受系统版本的边到边显示规则影响。
+        -->
         <item name="android:statusBarColor">@color/page_background</item>
+        <!--
+          设置所属样式的一个属性。 name="android:navigationBarColor"：请求设置导航栏背景色；手势导航等系统模式可能采用不同显示规则。
+        -->
         <item name="android:navigationBarColor">@color/page_background</item>
+        <!--
+          设置所属样式的一个属性。 name="android:windowLightNavigationBar"：true 请求深色导航栏图标；此属性从 API 26 起提供，较旧系统不会采用它。
+        -->
         <item name="android:windowLightNavigationBar">true</item>
+    <!-- 结束 style 节点。 -->
     </style>
+<!-- 结束 resources 节点。 -->
 </resources>

@@ -63,3 +63,13 @@
 这些版本为本学习示例固定配置，不代表最新版本。Gradle Wrapper 脚本和 JAR 来自 Gradle 官方 v8.11.1，保留原始许可信息。
 
 参考：[Android 开发文档](https://developer.android.com/guide)、[AGP 8.9 兼容性说明](https://developer.android.com/build/releases/agp-8-9-0-release-notes)。
+
+## 中文注释与目录说明
+
+每个受版本管理的项目文件夹都有 `folder-guide.txt`。包含源码或配置的目录还有 `code-guide.txt`，按实际行号解释每条有效代码、XML 属性或配置。
+
+Kotlin、Gradle 配置和 XML 中也已加入中文注释。XML 属性的解释集中放在完整标签之前，避免向标签内部插入注释导致语法错误。空白行和注释本身不参与执行。
+
+官方 `gradlew`、`gradlew.bat` 保留原始内容，逐行中文讲解在根目录 `code-guide.txt`；二进制 JAR 的作用在 `gradle/wrapper/code-guide.txt`。TXT 文档位于资源目录时，应用构建配置会显式排除它们。
+
+从根目录的 `folder-guide.txt` 开始，可以逐层阅读。说明文档不需要复制到手机上。

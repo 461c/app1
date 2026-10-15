@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  资源定义的根节点。 > 表示起始标签结束，接下来可放子节点。
+-->
 <resources>
+    <!--
+      定义可通过 R.color 或 @color 引用的颜色。 name="page_background"：页面的浅色背景；#RRGGBB 分别表示红、绿、蓝的十六进制分量。
+    -->
     <color name="page_background">#F7F9FC</color>
+    <!--
+      定义可通过 R.color 或 @color 引用的颜色。 name="text_primary"：标题和计数使用的深色。
+    -->
     <color name="text_primary">#172B4D</color>
+    <!--
+      定义可通过 R.color 或 @color 引用的颜色。 name="text_secondary"：说明文字使用的次要文字颜色。
+    -->
     <color name="text_secondary">#526079</color>
+    <!--
+      定义可通过 R.color 或 @color 引用的颜色。 name="accent"：按钮等控件使用的强调色。
+    -->
     <color name="accent">#2459A9</color>
+<!-- 结束 resources 节点。 -->
 </resources>

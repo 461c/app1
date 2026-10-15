@@ -1,0 +1,12 @@
+Gradle 工具配置目录
+路径：gradle
+
+wrapper 子目录保存 Gradle Wrapper 的配置和启动程序；它不是应用的业务代码目录。
+
+本层结构：
+wrapper/：gradle-wrapper.properties 固定下载版本和缓存路径，gradle-wrapper.jar 是 Gradle 官方的二进制启动程序。根目录 gradlew 或 gradlew.bat 调用它。
+folder-guide.txt：本文件，说明当前文件夹及直接子项。
+code-guide.txt（存在时）：同目录源码的逐行解释，对应修改后的实际行号。
+
+阅读方法：先读 folder-guide.txt，再读源码中的中文注释，必要时按行号查看 code-guide.txt。
+空白行用于分段，没有执行效果。注释不会作为业务逻辑执行。

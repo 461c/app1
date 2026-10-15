@@ -1,0 +1,12 @@
+包名的第二层 example
+路径：app/src/main/java/com/example
+
+example 表示教学示例使用的名称，下级 learningapp 保存本应用的页面代码。
+
+本层结构：
+learningapp/：MainActivity.kt 是唯一的页面类，负责加载 XML、响应按钮点击、更新计数和保存临时状态。
+folder-guide.txt：本文件，说明当前文件夹及直接子项。
+code-guide.txt（存在时）：同目录源码的逐行解释，对应修改后的实际行号。
+
+阅读方法：先读 folder-guide.txt，再读源码中的中文注释，必要时按行号查看 code-guide.txt。
+空白行用于分段，没有执行效果。注释不会作为业务逻辑执行。

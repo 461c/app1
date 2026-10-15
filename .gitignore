@@ -1,11 +1,21 @@
 # 本机配置和构建产物
+# 忽略 Gradle 缓存。
 .gradle/
+# 忽略 Kotlin 工具缓存。
 .kotlin/
+# 忽略任意层级的 build 编译输出目录；双星号匹配多层路径。
 **/build/
+# 忽略包含本机 Android SDK 路径的配置。
 local.properties
+# 忽略 Android Studio 的本机项目设置。
 .idea/
+# 忽略 IDE 生成的模块描述文件。
 *.iml
+# 忽略 macOS 的文件夹显示信息。
 .DS_Store
+# 忽略本机调试捕获文件。
 captures/
+# 忽略外部原生代码构建缓存。
 .externalNativeBuild/
+# 忽略 C/C++ 构建缓存。
 .cxx/

@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  资源定义的根节点。 > 表示起始标签结束，接下来可放子节点。
+-->
 <resources>
+    <!--
+      定义可通过 R.string 或 @string 引用的文字。 name="app_name"：手机上显示的应用名称。
+    -->
     <string name="app_name">安卓入门</string>
+    <!--
+      定义可通过 R.string 或 @string 引用的文字。 name="welcome"：首页欢迎文字。
+    -->
     <string name="welcome">你好，Android！</string>
+    <!--
+      定义可通过 R.string 或 @string 引用的文字。 name="description"：首页说明文字；\n 表示显示时换行。
+    -->
     <string name="description">这是你的第一个安卓应用\n试着点击下面的按钮吧</string>
+    <!--
+      定义可通过 R.string 或 @string 引用的文字。 name="initial_count"：布局初始文字；页面创建后 Kotlin 会更新这个控件。
+    -->
     <string name="initial_count">你已点击 0 次</string>
+    <!--
+      定义可通过 R.string 或 @string 引用的文字。 name="click_count"：%1$d 表示第一个参数是十进制整数，由 Kotlin 传入 count。
+    -->
     <string name="click_count">你已点击 %1$d 次</string>
+    <!--
+      定义可通过 R.string 或 @string 引用的文字。 name="increment"：加一按钮上的文字。
+    -->
     <string name="increment">点我 +1</string>
+    <!--
+      定义可通过 R.string 或 @string 引用的文字。 name="reset"：重置按钮上的文字。
+    -->
     <string name="reset">重置</string>
+<!-- 结束 resources 节点。 -->
 </resources>

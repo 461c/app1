@@ -1,0 +1,29 @@
+文件：gradle-wrapper.properties
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L2: distributionBase=GRADLE_USER_HOME
+解释：Gradle 解压目录的基准位置；GRADLE_USER_HOME 通常为用户目录下的 .gradle。
+
+L4: distributionPath=wrapper/dists
+解释：Gradle 解压目录相对于基准位置的子路径。
+
+L6: distributionUrl=https\://services.gradle.org/distributions/gradle-8.11.1-bin.zip
+解释：固定下载 Gradle 8.11.1 的 bin 压缩包；反斜杠是 properties 格式中的冒号转义。
+
+L8: networkTimeout=10000
+解释：Wrapper 网络请求超时为 10000 毫秒，也就是 10 秒。
+
+L10: validateDistributionUrl=true
+解释：启用 Wrapper 对下载地址的校验；这不等于对文件内容进行 SHA-256 校验。
+
+L12: zipStoreBase=GRADLE_USER_HOME
+解释：Gradle 下载 ZIP 缓存位置的基准目录。
+
+L14: zipStorePath=wrapper/dists
+解释：ZIP 缓存相对于基准目录的子路径。
+
+
+文件：gradle-wrapper.jar
+这是 Gradle 官方二进制启动程序，不是文本源码，没有可以安全添加中文注释的文本行。
+根目录启动脚本调用它的 GradleWrapperMain 类，它读取同目录 properties 后定位或下载 Gradle。请保持 JAR 字节不变。

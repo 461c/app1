@@ -1,0 +1,98 @@
+文件：colors.xml
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L1: <?xml version="1.0" encoding="utf-8"?>
+解释：XML 声明：版本为 1.0，文件编码为 UTF-8，必须位于文件开头。
+
+L5: <resources>
+解释：资源定义的根节点。 > 表示起始标签结束，接下来可放子节点。
+
+L9:     <color name="page_background">#F7F9FC</color>
+解释：定义可通过 R.color 或 @color 引用的颜色。 name="page_background"：页面的浅色背景；#RRGGBB 分别表示红、绿、蓝的十六进制分量。
+
+L13:     <color name="text_primary">#172B4D</color>
+解释：定义可通过 R.color 或 @color 引用的颜色。 name="text_primary"：标题和计数使用的深色。
+
+L17:     <color name="text_secondary">#526079</color>
+解释：定义可通过 R.color 或 @color 引用的颜色。 name="text_secondary"：说明文字使用的次要文字颜色。
+
+L21:     <color name="accent">#2459A9</color>
+解释：定义可通过 R.color 或 @color 引用的颜色。 name="accent"：按钮等控件使用的强调色。
+
+L23: </resources>
+解释：结束 resources 节点。
+
+
+文件：strings.xml
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L1: <?xml version="1.0" encoding="utf-8"?>
+解释：XML 声明：版本为 1.0，文件编码为 UTF-8，必须位于文件开头。
+
+L5: <resources>
+解释：资源定义的根节点。 > 表示起始标签结束，接下来可放子节点。
+
+L9:     <string name="app_name">安卓入门</string>
+解释：定义可通过 R.string 或 @string 引用的文字。 name="app_name"：手机上显示的应用名称。
+
+L13:     <string name="welcome">你好，Android！</string>
+解释：定义可通过 R.string 或 @string 引用的文字。 name="welcome"：首页欢迎文字。
+
+L17:     <string name="description">这是你的第一个安卓应用\n试着点击下面的按钮吧</string>
+解释：定义可通过 R.string 或 @string 引用的文字。 name="description"：首页说明文字；\n 表示显示时换行。
+
+L21:     <string name="initial_count">你已点击 0 次</string>
+解释：定义可通过 R.string 或 @string 引用的文字。 name="initial_count"：布局初始文字；页面创建后 Kotlin 会更新这个控件。
+
+L25:     <string name="click_count">你已点击 %1$d 次</string>
+解释：定义可通过 R.string 或 @string 引用的文字。 name="click_count"：%1$d 表示第一个参数是十进制整数，由 Kotlin 传入 count。
+
+L29:     <string name="increment">点我 +1</string>
+解释：定义可通过 R.string 或 @string 引用的文字。 name="increment"：加一按钮上的文字。
+
+L33:     <string name="reset">重置</string>
+解释：定义可通过 R.string 或 @string 引用的文字。 name="reset"：重置按钮上的文字。
+
+L35: </resources>
+解释：结束 resources 节点。
+
+
+文件：themes.xml
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L1: <?xml version="1.0" encoding="utf-8"?>
+解释：XML 声明：版本为 1.0，文件编码为 UTF-8，必须位于文件开头。
+
+L5: <resources>
+解释：资源定义的根节点。 > 表示起始标签结束，接下来可放子节点。
+
+L10:     <style name="Theme.LearningApp" parent="android:style/Theme.Material.Light.NoActionBar">
+解释：定义可复用的主题或样式。 name="Theme.LearningApp"：主题名称；parent 继承 Android 自带的浅色无标题栏 Material 主题，无需第三方 UI 库。 parent：继承 Android 自带的 Theme.Material.Light.NoActionBar 主题。 > 表示起始标签结束，接下来可放子节点。
+
+L14:         <item name="android:fontFamily">sans</item>
+解释：设置所属样式的一个属性。 name="android:fontFamily"：设置默认字体为 sans 无衬线字体。
+
+L18:         <item name="android:colorAccent">@color/accent</item>
+解释：设置所属样式的一个属性。 name="android:colorAccent"：将强调色关联到 accent 颜色资源。
+
+L22:         <item name="android:windowLightStatusBar">true</item>
+解释：设置所属样式的一个属性。 name="android:windowLightStatusBar"：true 请求深色状态栏图标，便于在浅色背景上阅读。
+
+L26:         <item name="android:statusBarColor">@color/page_background</item>
+解释：设置所属样式的一个属性。 name="android:statusBarColor"：请求设置状态栏背景色；实际效果可能受系统版本的边到边显示规则影响。
+
+L30:         <item name="android:navigationBarColor">@color/page_background</item>
+解释：设置所属样式的一个属性。 name="android:navigationBarColor"：请求设置导航栏背景色；手势导航等系统模式可能采用不同显示规则。
+
+L34:         <item name="android:windowLightNavigationBar">true</item>
+解释：设置所属样式的一个属性。 name="android:windowLightNavigationBar"：true 请求深色导航栏图标；此属性从 API 26 起提供，较旧系统不会采用它。
+
+L36:     </style>
+解释：结束 style 节点。
+
+L38: </resources>
+解释：结束 resources 节点。
+

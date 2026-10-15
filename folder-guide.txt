@@ -1,0 +1,24 @@
+项目根目录
+路径：.
+
+这里管理整个项目、构建入口和学习文档。打开 Android Studio 时应选择此目录。
+
+本层结构：
+.gitignore：Git 忽略规则，避免提交本机配置和构建缓存。
+README.md：运行教程和学习入口。
+app/：build.gradle.kts 配置本应用；src 保存源码和资源。根项目通过 include(":app") 引入这个模块。
+build.gradle.kts：根目录声明插件版本；app 中配置应用如何构建。
+gradle/：wrapper 子目录保存 Gradle Wrapper 的配置和启动程序；它不是应用的业务代码目录。
+gradle.properties：Gradle 进程参数和 Kotlin 格式约定。
+gradlew：macOS / Linux 上运行的 Gradle 启动脚本。
+gradlew.bat：Windows 上运行的 Gradle 启动脚本。
+settings.gradle.kts：项目名、模块注册及下载仓库配置。
+folder-guide.txt：本文件，说明当前文件夹及直接子项。
+code-guide.txt（存在时）：同目录源码的逐行解释，对应修改后的实际行号。
+
+阅读方法：先读 folder-guide.txt，再读源码中的中文注释，必要时按行号查看 code-guide.txt。
+空白行用于分段，没有执行效果。注释不会作为业务逻辑执行。
+
+推荐顺序：app/src/main/res/layout/activity_main.xml → app/src/main/java/com/example/learningapp/MainActivity.kt → app/src/main/res/values/ → AndroidManifest.xml → Gradle 配置。
+gradlew、gradlew.bat 是上游生成的启动脚本；中文逐行解释在本目录 code-guide.txt，保留原脚本避免改变跨平台转义和多行命令。
+覆盖范围是本仓库受版本管理的项目目录，不包括 .git、IDE 缓存或以后生成的 build 目录。

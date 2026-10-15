@@ -1,0 +1,566 @@
+文件：.gitignore
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L3: .gradle/
+解释：忽略 Gradle 缓存。
+
+L5: .kotlin/
+解释：忽略 Kotlin 工具缓存。
+
+L7: **/build/
+解释：忽略任意层级的 build 编译输出目录；双星号匹配多层路径。
+
+L9: local.properties
+解释：忽略包含本机 Android SDK 路径的配置。
+
+L11: .idea/
+解释：忽略 Android Studio 的本机项目设置。
+
+L13: *.iml
+解释：忽略 IDE 生成的模块描述文件。
+
+L15: .DS_Store
+解释：忽略 macOS 的文件夹显示信息。
+
+L17: captures/
+解释：忽略本机调试捕获文件。
+
+L19: .externalNativeBuild/
+解释：忽略外部原生代码构建缓存。
+
+L21: .cxx/
+解释：忽略 C/C++ 构建缓存。
+
+
+文件：build.gradle.kts
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L3: plugins {
+解释：开始声明本构建脚本需要的插件。
+
+L5:     id("com.android.application") version "8.9.2" apply false
+解释：固定 Android 应用插件版本；apply false 表示这里只声明版本，不在根项目应用。
+
+L7:     id("org.jetbrains.kotlin.android") version "2.1.20" apply false
+解释：固定 Kotlin Android 插件版本，实际应用插件的位置是 app 模块。
+
+L9: }
+解释：结束插件声明块。
+
+
+文件：gradle.properties
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L2: org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+解释：配置 Gradle 构建进程的 JVM 参数：最大堆内存 2048 MB，默认字符编码为 UTF-8。
+
+L4: kotlin.code.style=official
+解释：让支持此配置的 IDE 使用 Kotlin 官方代码格式约定。
+
+
+文件：gradlew
+L1: #!/bin/sh
+解释：Shebang：指定使用 /bin/sh 解释这个 POSIX Shell 脚本。
+
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L70: app_path=$0
+解释：把当前脚本启动路径 $0 保存到变量中。
+
+L73: while
+解释：开始循环；后面的命令用于解析启动脚本的符号链接。
+
+L74:     APP_HOME=${app_path%"${app_path##*/}"}  # leaves a trailing /; empty if no leading path
+解释：从当前脚本路径去掉末尾文件名，得到脚本所在目录。
+
+L75:     [ -h "$app_path" ]
+解释：检查当前路径是否为符号链接；为真时继续循环。
+
+L76: do
+解释：开始循环体。
+
+L77:     ls=$( ls -ld "$app_path" )
+解释：读取符号链接的详细信息，用于找出链接目标。
+
+L78:     link=${ls#*' -> '}
+解释：从 ls 输出中截取箭头之后的链接目标。
+
+L79:     case $link in             #(
+解释：根据符号链接目标是绝对路径还是相对路径分别处理。
+
+L80:       /*)   app_path=$link ;; #(
+解释：目标以 / 开头时，直接把绝对路径作为新的脚本路径。
+
+L81:       *)    app_path=$APP_HOME$link ;;
+解释：相对链接目标需要与当前脚本目录拼接。
+
+L82:     esac
+解释：结束 case 多分支判断。
+
+L83: done
+解释：结束循环体。
+
+L87: APP_BASE_NAME=${0##*/}
+解释：从 $0 去掉目录部分，得到用于日志和系统属性的脚本名称。
+
+L89: APP_HOME=$( cd -P "${APP_HOME:-./}" > /dev/null && printf '%s
+解释：切换到脚本所在目录并用物理路径解析项目根目录，失败则退出；printf 字符串延续到下一行。
+
+L90: ' "$PWD" ) || exit
+解释：结束上一行 printf 的格式字符串，输出当前目录；|| exit 表示失败时退出。
+
+L93: MAX_FD=maximum
+解释：请求使用系统允许的最大文件描述符数量。
+
+L95: warn () {
+解释：定义警告函数。
+
+L96:     echo "$*"
+解释：输出调用函数时传入的所有消息参数。
+
+L97: } >&2
+解释：结束函数定义，并将该函数的输出重定向到标准错误。
+
+L99: die () {
+解释：定义错误处理函数，打印错误后终止脚本。
+
+L100:     echo
+解释：输出一个空行，让错误信息更易阅读。
+
+L101:     echo "$*"
+解释：输出调用函数时传入的所有消息参数。
+
+L102:     echo
+解释：输出一个空行，让错误信息更易阅读。
+
+L103:     exit 1
+解释：以非零状态码 1 退出，表示失败。
+
+L104: } >&2
+解释：结束函数定义，并将该函数的输出重定向到标准错误。
+
+L107: cygwin=false
+解释：初始化系统标记 cygwin 为 false，随后按 uname 的结果修改。
+
+L108: msys=false
+解释：初始化系统标记 msys 为 false，随后按 uname 的结果修改。
+
+L109: darwin=false
+解释：初始化系统标记 darwin 为 false，随后按 uname 的结果修改。
+
+L110: nonstop=false
+解释：初始化系统标记 nonstop 为 false，随后按 uname 的结果修改。
+
+L111: case "$( uname )" in                #(
+解释：读取操作系统名称，选择对应的兼容处理分支。
+
+L112:   CYGWIN* )         cygwin=true  ;; #(
+解释：匹配该操作系统名称，把对应的系统标记设为 true；;; 结束当前分支。
+
+L113:   Darwin* )         darwin=true  ;; #(
+解释：匹配该操作系统名称，把对应的系统标记设为 true；;; 结束当前分支。
+
+L114:   MSYS* | MINGW* )  msys=true    ;; #(
+解释：匹配该操作系统名称，把对应的系统标记设为 true；;; 结束当前分支。
+
+L115:   NONSTOP* )        nonstop=true ;;
+解释：匹配该操作系统名称，把对应的系统标记设为 true；;; 结束当前分支。
+
+L116: esac
+解释：结束 case 多分支判断。
+
+L118: CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+解释：指定 Gradle Wrapper JAR 路径，让 Java 能找到启动类。
+
+L122: if [ -n "$JAVA_HOME" ] ; then
+解释：如果设置了 JAVA_HOME，优先从该目录寻找 Java。
+
+L123:     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+解释：检查 AIX 等特定环境下的 Java 路径是否可执行。
+
+L125:         JAVACMD=$JAVA_HOME/jre/sh/java
+解释：选择 AIX 风格路径中的 Java 可执行文件。
+
+L126:     else
+解释：前面的条件不成立时执行这个分支。
+
+L127:         JAVACMD=$JAVA_HOME/bin/java
+解释：选择通常位于 JAVA_HOME/bin/java 的 Java 可执行文件。
+
+L128:     fi
+解释：结束 if 条件判断。
+
+L129:     if [ ! -x "$JAVACMD" ] ; then
+解释：如果选择的 Java 文件不可执行，就进入错误分支。
+
+L130:         die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
+解释：开始输出 JAVA_HOME 无效的多行错误信息。
+
+L132: Please set the JAVA_HOME variable in your environment to match the
+解释：多行错误字符串的正文：提示设置正确的 JAVA_HOME；这不是独立命令。
+
+L133: location of your Java installation."
+解释：多行错误字符串的最后一行：提示填写 Java 安装目录，末尾双引号结束字符串。
+
+L134:     fi
+解释：结束 if 条件判断。
+
+L135: else
+解释：前面的条件不成立时执行这个分支。
+
+L136:     JAVACMD=java
+解释：未设置 JAVA_HOME 时，使用 PATH 中的 java 命令。
+
+L137:     if ! command -v java >/dev/null 2>&1
+解释：检查 PATH 中是否存在 java；! 将检查结果取反，>/dev/null 2>&1 隐藏检测输出。
+
+L138:     then
+解释：条件成立时开始执行分支。
+
+L139:         die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+解释：开始输出 JAVA_HOME 无效的多行错误信息。
+
+L141: Please set the JAVA_HOME variable in your environment to match the
+解释：多行错误字符串的正文：提示设置正确的 JAVA_HOME；这不是独立命令。
+
+L142: location of your Java installation."
+解释：多行错误字符串的最后一行：提示填写 Java 安装目录，末尾双引号结束字符串。
+
+L143:     fi
+解释：结束 if 条件判断。
+
+L144: fi
+解释：结束 if 条件判断。
+
+L147: if ! "$cygwin" && ! "$darwin" && ! "$nonstop" ; then
+解释：在适用的平台上尝试提高文件描述符上限，跳过不兼容的平台。
+
+L148:     case $MAX_FD in #(
+解释：按文件描述符上限变量的值选择后续操作。
+
+L149:       max*)
+解释：匹配 maximum 等以 max 开头的值，准备查询系统上限。
+
+L152:         MAX_FD=$( ulimit -H -n ) ||
+解释：查询硬限制中的最大打开文件数；|| 表示失败时执行下一行警告。
+
+L153:             warn "Could not query maximum file descriptor limit"
+解释：查询系统文件数上限失败时输出警告。
+
+L154:     esac
+解释：结束 case 多分支判断。
+
+L155:     case $MAX_FD in  #(
+解释：按文件描述符上限变量的值选择后续操作。
+
+L156:       '' | soft) :;; #(
+解释：值为空或 soft 时不作修改；冒号是空操作，;; 结束分支。
+
+L157:       *)
+解释：case 的默认分支，用于未被前面规则匹配的值。
+
+L160:         ulimit -n "$MAX_FD" ||
+解释：尝试设置当前进程允许的最大打开文件数；失败时执行下一行警告。
+
+L161:             warn "Could not set maximum file descriptor limit to $MAX_FD"
+解释：设置打开文件数上限失败时输出警告。
+
+L162:     esac
+解释：结束 case 多分支判断。
+
+L163: fi
+解释：结束 if 条件判断。
+
+L174: if "$cygwin" || "$msys" ; then
+解释：在 Cygwin 或 MSYS 环境进入 Windows 路径转换流程。
+
+L175:     APP_HOME=$( cygpath --path --mixed "$APP_HOME" )
+解释：把项目目录转换为 Windows Java 可识别的混合路径格式。
+
+L176:     CLASSPATH=$( cygpath --path --mixed "$CLASSPATH" )
+解释：指定 Gradle Wrapper JAR 路径，让 Java 能找到启动类。
+
+L178:     JAVACMD=$( cygpath --unix "$JAVACMD" )
+解释：将 Java 命令路径转换为当前 Shell 可执行的 Unix 格式。
+
+L181:     for arg do
+解释：逐个遍历原有命令行参数，检查是否需要转换路径。
+
+L182:         if
+解释：开始条件判断，条件由后续 case 语句的退出状态给出。
+
+L183:             case $arg in                                #(
+解释：按当前参数的前缀判断它是选项还是可能的文件路径。
+
+L184:               -*)   false ;;                            # don't mess with options #(
+解释：以减号开头的参数视为选项，返回 false，跳过路径转换。
+
+L185:               /?*)  t=${arg#/} t=/${t%%/*}              # looks like a POSIX filepath
+解释：参数形似 Unix 绝对路径时，提取它的顶层目录以便检查。
+
+L186:                     [ -e "$t" ] ;;                      #(
+解释：检查候选路径的顶层目录是否存在，以决定是否转换参数。
+
+L187:               *)    false ;;
+解释：其他参数返回 false，不转换。
+
+L188:             esac
+解释：结束 case 多分支判断。
+
+L189:         then
+解释：条件成立时开始执行分支。
+
+L190:             arg=$( cygpath --path --ignore --mixed "$arg" )
+解释：把确认的路径参数转换成 Windows Java 能识别的格式。
+
+L191:         fi
+解释：结束 if 条件判断。
+
+L199:         shift                   # remove old arg
+解释：移除参数队列最前面的旧参数。
+
+L200:         set -- "$@" "$arg"      # push replacement arg
+解释：将处理后的参数追加到队列末尾；引号保护包含空格的参数。
+
+L201:     done
+解释：结束循环体。
+
+L202: fi
+解释：结束 if 条件判断。
+
+L206: DEFAULT_JVM_OPTS='-Dfile.encoding=UTF-8 "-Xmx64m" "-Xms64m"'
+解释：设置 Wrapper 启动进程的 UTF-8 编码和初始、最大堆内存各 64 MB；不等于构建守护进程的内存设置。
+
+L214: set -- \
+解释：重新组装位置参数；行末反斜杠表示命令在下一行继续。
+
+L215:         "-Dorg.gradle.appname=$APP_BASE_NAME" \
+解释：向 JVM 传入应用名称系统属性；本行是上一条命令的参数。
+
+L216:         -classpath "$CLASSPATH" \
+解释：向 Java 指定启动类所在的 JAR 路径。
+
+L217:         org.gradle.wrapper.GradleWrapperMain \
+解释：指定 Gradle Wrapper 的 Java 入口类。
+
+L218:         "$@"
+解释：原样保留用户传入的参数，例如 assembleDebug，每个参数保持独立。
+
+L221: if ! command -v xargs >/dev/null 2>&1
+解释：检查 xargs 工具是否存在，后面解析 JVM 选项需要它。
+
+L222: then
+解释：条件成立时开始执行分支。
+
+L223:     die "xargs is not available"
+解释：缺少 xargs 时输出错误并退出。
+
+L224: fi
+解释：结束 if 条件判断。
+
+L245: eval "set -- $(
+解释：开始将经过转义的 JVM 选项重新组装成参数列表；下面多行共同组成一条命令。
+
+L246:         printf '%s\n' "$DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS" |
+解释：输出默认和用户提供的 JVM 选项；管道把输出交给下一行。
+
+L247:         xargs -n1 |
+解释：按引号规则拆分选项，每行输出一个参数，再交给下一阶段。
+
+L248:         sed ' s~[^-[:alnum:]+,./:=@_]~\\&~g; ' |
+解释：为特殊字符添加反斜杠，避免参数内容被误当作 Shell 语法。
+
+L249:         tr '\n' ' '
+解释：把参数之间的换行转换为空格，准备组成 set 命令。
+
+L250:     )" '"$@"'
+解释：结束命令替换并附加原有参数，保留各参数的边界。
+
+L252: exec "$JAVACMD" "$@"
+解释：用 Java 进程替换当前 Shell，执行 Wrapper 入口和组装好的参数。
+
+
+文件：gradlew.bat
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L19: @if "%DEBUG%"=="" @echo off
+解释：未开启 DEBUG 时关闭命令回显；@ 表示当前命令自身也不回显。
+
+L27: if "%OS%"=="Windows_NT" setlocal
+解释：为脚本开启局部环境变量作用域，避免影响调用者。
+
+L29: set DIRNAME=%~dp0
+解释：从当前批处理文件路径中取出盘符和目录。
+
+L30: if "%DIRNAME%"=="" set DIRNAME=.
+解释：若目录为空，使用当前目录作为后备路径。
+
+L32: set APP_BASE_NAME=%~n0
+解释：获取不带扩展名的脚本名称，用于 JVM 系统属性。
+
+L33: set APP_HOME=%DIRNAME%
+解释：将脚本所在目录作为项目根目录。
+
+L36: for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
+解释：将项目目录转换为完整路径，消除路径中的 . 和 ..。
+
+L39: set DEFAULT_JVM_OPTS=-Dfile.encoding=UTF-8 "-Xmx64m" "-Xms64m"
+解释：设置 Wrapper 启动 JVM 的 UTF-8 编码和 64 MB 堆内存参数。
+
+L42: if defined JAVA_HOME goto findJavaFromJavaHome
+解释：设置了 JAVA_HOME 时跳到指定标签，从安装目录寻找 Java。
+
+L44: set JAVA_EXE=java.exe
+解释：默认使用 PATH 中的 java.exe。
+
+L45: %JAVA_EXE% -version >NUL 2>&1
+解释：尝试运行 Java 版本命令，隐藏标准输出和错误输出，用退出码判断是否可用。
+
+L46: if %ERRORLEVEL% equ 0 goto execute
+解释：Java 检查成功时，跳转到执行 Wrapper 的标签。
+
+L48: echo. 1>&2
+解释：向标准错误输出一个空行。
+
+L49: echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH. 1>&2
+解释：输出没有配置 JAVA_HOME 且 PATH 找不到 Java 的错误。
+
+L50: echo. 1>&2
+解释：向标准错误输出一个空行。
+
+L51: echo Please set the JAVA_HOME variable in your environment to match the 1>&2
+解释：提示把 JAVA_HOME 设置为 Java 安装目录。
+
+L52: echo location of your Java installation. 1>&2
+解释：继续输出 Java 安装目录的提示。
+
+L54: goto fail
+解释：跳转到统一的失败退出流程。
+
+L56: :findJavaFromJavaHome
+解释：定义跳转标签 findJavaFromJavaHome，供 goto 使用；标签本身不执行操作。
+
+L57: set JAVA_HOME=%JAVA_HOME:"=%
+解释：去掉 JAVA_HOME 值里的双引号，便于拼接可执行文件路径。
+
+L58: set JAVA_EXE=%JAVA_HOME%/bin/java.exe
+解释：从 JAVA_HOME 下定位 bin/java.exe。
+
+L60: if exist "%JAVA_EXE%" goto execute
+解释：指定 Java 文件存在时跳转到执行流程。
+
+L62: echo. 1>&2
+解释：向标准错误输出一个空行。
+
+L63: echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME% 1>&2
+解释：输出 JAVA_HOME 指向无效目录的错误。
+
+L64: echo. 1>&2
+解释：向标准错误输出一个空行。
+
+L65: echo Please set the JAVA_HOME variable in your environment to match the 1>&2
+解释：提示把 JAVA_HOME 设置为 Java 安装目录。
+
+L66: echo location of your Java installation. 1>&2
+解释：继续输出 Java 安装目录的提示。
+
+L68: goto fail
+解释：跳转到统一的失败退出流程。
+
+L70: :execute
+解释：定义跳转标签 execute，供 goto 使用；标签本身不执行操作。
+
+L73: set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
+解释：设置官方 Wrapper JAR 的路径。
+
+L77: "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
+解释：启动 Java，传入默认和用户 JVM 选项、Wrapper JAR 与入口类；%* 把全部用户参数（如 assembleDebug）转发给 Gradle。
+
+L79: :end
+解释：定义跳转标签 end，供 goto 使用；标签本身不执行操作。
+
+L81: if %ERRORLEVEL% equ 0 goto mainEnd
+解释：Wrapper 成功退出时跳到清理局部环境的流程。
+
+L83: :fail
+解释：定义跳转标签 fail，供 goto 使用；标签本身不执行操作。
+
+L86: set EXIT_CODE=%ERRORLEVEL%
+解释：保存上一条命令的退出码。
+
+L87: if %EXIT_CODE% equ 0 set EXIT_CODE=1
+解释：进入失败流程却得到 0 时，改为非零错误码 1。
+
+L88: if not ""=="%GRADLE_EXIT_CONSOLE%" exit %EXIT_CODE%
+解释：设置了 GRADLE_EXIT_CONSOLE 时，按错误码退出命令解释器。
+
+L89: exit /b %EXIT_CODE%
+解释：只退出当前批处理脚本，并把错误码返回调用者。
+
+L91: :mainEnd
+解释：定义跳转标签 mainEnd，供 goto 使用；标签本身不执行操作。
+
+L92: if "%OS%"=="Windows_NT" endlocal
+解释：结束局部变量作用域，恢复调用前的环境。
+
+L94: :omega
+解释：定义跳转标签 omega，供 goto 使用；标签本身不执行操作。
+
+
+文件：settings.gradle.kts
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L2: pluginManagement {
+解释：配置构建插件的解析规则；插件负责给 Gradle 增加 Android、Kotlin 等能力。
+
+L4:     repositories {
+解释：开始声明依赖下载仓库；Gradle 按这里的顺序查找所需组件。
+
+L6:         google()
+解释：使用 Google Maven 仓库，下载 Android 构建插件等组件。
+
+L8:         mavenCentral()
+解释：使用 Maven Central 仓库，下载 Kotlin 等开源依赖。
+
+L10:         gradlePluginPortal()
+解释：使用 Gradle 官方插件仓库解析插件。
+
+L12:     }
+解释：结束下载仓库配置块。
+
+L14: }
+解释：结束插件管理块。
+
+L17: dependencyResolutionManagement {
+解释：集中管理各模块的普通依赖仓库，与上面的插件仓库分开。
+
+L19:     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+解释：禁止模块另行声明仓库，所有模块统一使用此处的仓库配置。
+
+L21:     repositories {
+解释：开始声明依赖下载仓库；Gradle 按这里的顺序查找所需组件。
+
+L23:         google()
+解释：使用 Google Maven 仓库，下载 Android 构建插件等组件。
+
+L25:         mavenCentral()
+解释：使用 Maven Central 仓库，下载 Kotlin 等开源依赖。
+
+L27:     }
+解释：结束下载仓库配置块。
+
+L29: }
+解释：结束依赖解析配置块。
+
+L32: rootProject.name = "LearningApp"
+解释：把 Gradle 项目名称设为 LearningApp；这不是手机桌面显示的应用名称。
+
+L34: include(":app")
+解释：把 app 文件夹作为一个构建模块加入项目；冒号表示 Gradle 模块路径。
+

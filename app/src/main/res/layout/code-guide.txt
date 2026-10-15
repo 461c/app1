@@ -1,0 +1,148 @@
+文件：activity_main.xml
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L1: <?xml version="1.0" encoding="utf-8"?>
+解释：XML 声明：版本为 1.0，文件编码为 UTF-8，必须位于文件开头。
+
+L13: <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+解释：线性布局容器，负责按方向排列子控件。 xmlns:android="http://schemas.android.com/apk/res/android"：声明 android 属性前缀对应的 XML 命名空间，后续 android: 属性依靠它解析。
+
+L14:     android:layout_width="match_parent"
+解释：android:layout_width="match_parent"：控件宽度：match_parent 占满父容器可用宽度，wrap_content 根据内容决定。
+
+L15:     android:layout_height="match_parent"
+解释：android:layout_height="match_parent"：控件高度：match_parent 占满父容器可用高度，wrap_content 根据内容决定。
+
+L16:     android:orientation="vertical"
+解释：android:orientation="vertical"：vertical 表示把子控件从上到下排列。
+
+L17:     android:gravity="center"
+解释：android:gravity="center"：center 表示将内容居中；容器上控制子控件位置，文字控件上控制内部文字对齐。
+
+L18:     android:padding="24dp"
+解释：android:padding="24dp"：四周内部留白 24dp；dp 是适配不同屏幕密度的尺寸单位。
+
+L19:     android:fitsSystemWindows="true"
+解释：android:fitsSystemWindows="true"：请求为系统栏预留空间，减少内容被状态栏或导航栏遮挡的情况。
+
+L20:     android:background="@color/page_background">
+解释：android:background="@color/page_background"：引用颜色资源作为背景。 > 表示起始标签结束，接下来可放子节点。
+
+L31:     <TextView
+解释：文字显示控件。
+
+L32:         android:layout_width="wrap_content"
+解释：android:layout_width="wrap_content"：控件宽度：match_parent 占满父容器可用宽度，wrap_content 根据内容决定。
+
+L33:         android:layout_height="wrap_content"
+解释：android:layout_height="wrap_content"：控件高度：match_parent 占满父容器可用高度，wrap_content 根据内容决定。
+
+L34:         android:text="@string/welcome"
+解释：android:text="@string/welcome"：文字内容引用 strings.xml 的字符串资源。
+
+L35:         android:textColor="@color/text_primary"
+解释：android:textColor="@color/text_primary"：引用 colors.xml 中的文字颜色。
+
+L36:         android:textSize="26sp"
+解释：android:textSize="26sp"：文字大小，单位 sp 会随用户字体大小设置缩放。
+
+L37:         android:textStyle="bold" />
+解释：android:textStyle="bold"：bold 表示加粗文字。 /> 表示这个节点在此处结束，没有子节点。
+
+L49:     <TextView
+解释：文字显示控件。
+
+L50:         android:layout_width="wrap_content"
+解释：android:layout_width="wrap_content"：控件宽度：match_parent 占满父容器可用宽度，wrap_content 根据内容决定。
+
+L51:         android:layout_height="wrap_content"
+解释：android:layout_height="wrap_content"：控件高度：match_parent 占满父容器可用高度，wrap_content 根据内容决定。
+
+L52:         android:layout_marginTop="12dp"
+解释：android:layout_marginTop="12dp"：与上方控件之间的外部间距，单位为 dp。
+
+L53:         android:gravity="center"
+解释：android:gravity="center"：center 表示将内容居中；容器上控制子控件位置，文字控件上控制内部文字对齐。
+
+L54:         android:text="@string/description"
+解释：android:text="@string/description"：文字内容引用 strings.xml 的字符串资源。
+
+L55:         android:textColor="@color/text_secondary"
+解释：android:textColor="@color/text_secondary"：引用 colors.xml 中的文字颜色。
+
+L56:         android:textSize="16sp" />
+解释：android:textSize="16sp"：文字大小，单位 sp 会随用户字体大小设置缩放。 /> 表示这个节点在此处结束，没有子节点。
+
+L69:     <TextView
+解释：文字显示控件。
+
+L70:         android:id="@+id/count_text"
+解释：android:id="@+id/count_text"：@+id/ 声明控件 ID，Kotlin 可用 R.id.名称找到它。
+
+L71:         android:layout_width="wrap_content"
+解释：android:layout_width="wrap_content"：控件宽度：match_parent 占满父容器可用宽度，wrap_content 根据内容决定。
+
+L72:         android:layout_height="wrap_content"
+解释：android:layout_height="wrap_content"：控件高度：match_parent 占满父容器可用高度，wrap_content 根据内容决定。
+
+L73:         android:layout_marginTop="32dp"
+解释：android:layout_marginTop="32dp"：与上方控件之间的外部间距，单位为 dp。
+
+L74:         android:accessibilityLiveRegion="polite"
+解释：android:accessibilityLiveRegion="polite"：polite 表示文字改变时，屏幕阅读器可在合适时机播报，避免强行打断。
+
+L75:         android:text="@string/initial_count"
+解释：android:text="@string/initial_count"：文字内容引用 strings.xml 的字符串资源。
+
+L76:         android:textColor="@color/text_primary"
+解释：android:textColor="@color/text_primary"：引用 colors.xml 中的文字颜色。
+
+L77:         android:textSize="22sp" />
+解释：android:textSize="22sp"：文字大小，单位 sp 会随用户字体大小设置缩放。 /> 表示这个节点在此处结束，没有子节点。
+
+L88:     <Button
+解释：可点击的按钮控件。
+
+L89:         android:id="@+id/increment_button"
+解释：android:id="@+id/increment_button"：@+id/ 声明控件 ID，Kotlin 可用 R.id.名称找到它。
+
+L90:         android:layout_width="match_parent"
+解释：android:layout_width="match_parent"：控件宽度：match_parent 占满父容器可用宽度，wrap_content 根据内容决定。
+
+L91:         android:layout_height="wrap_content"
+解释：android:layout_height="wrap_content"：控件高度：match_parent 占满父容器可用高度，wrap_content 根据内容决定。
+
+L92:         android:layout_marginTop="24dp"
+解释：android:layout_marginTop="24dp"：与上方控件之间的外部间距，单位为 dp。
+
+L93:         android:minHeight="48dp"
+解释：android:minHeight="48dp"：最小高度 48dp，提供较容易触摸的按钮区域。
+
+L94:         android:text="@string/increment" />
+解释：android:text="@string/increment"：文字内容引用 strings.xml 的字符串资源。 /> 表示这个节点在此处结束，没有子节点。
+
+L105:     <Button
+解释：可点击的按钮控件。
+
+L106:         android:id="@+id/reset_button"
+解释：android:id="@+id/reset_button"：@+id/ 声明控件 ID，Kotlin 可用 R.id.名称找到它。
+
+L107:         android:layout_width="match_parent"
+解释：android:layout_width="match_parent"：控件宽度：match_parent 占满父容器可用宽度，wrap_content 根据内容决定。
+
+L108:         android:layout_height="wrap_content"
+解释：android:layout_height="wrap_content"：控件高度：match_parent 占满父容器可用高度，wrap_content 根据内容决定。
+
+L109:         android:layout_marginTop="8dp"
+解释：android:layout_marginTop="8dp"：与上方控件之间的外部间距，单位为 dp。
+
+L110:         android:minHeight="48dp"
+解释：android:minHeight="48dp"：最小高度 48dp，提供较容易触摸的按钮区域。
+
+L111:         android:text="@string/reset" />
+解释：android:text="@string/reset"：文字内容引用 strings.xml 的字符串资源。 /> 表示这个节点在此处结束，没有子节点。
+
+L113: </LinearLayout>
+解释：结束 LinearLayout 节点。
+
