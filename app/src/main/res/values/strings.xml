@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">安卓入门</string>
+    <string name="welcome">你好，Android！</string>
+    <string name="description">这是你的第一个安卓应用\n试着点击下面的按钮吧</string>
+    <string name="initial_count">你已点击 0 次</string>
+    <string name="click_count">你已点击 %1$d 次</string>
+    <string name="increment">点我 +1</string>
+    <string name="reset">重置</string>
+</resources>
