@@ -1,6 +1,6 @@
 # Android 入门：点击计数器
 
-这是一个适合第一次学习 Android 开发的最小项目。使用 **Kotlin + XML 布局**，只有一个页面，没有网络、登录、数据库或第三方 UI 框架。
+这是一个从最小点击计数器逐步学习大型应用结构的项目。使用 **Kotlin + XML 布局**，已实现的功能只有一个计数器页面；登录、个人中心、设置、网络和数据库仅预留目录，没有接入第三方 UI 框架。
 
 ## 运行项目
 
@@ -28,7 +28,7 @@
 
 | 文件 | 学习内容 |
 | --- | --- |
-| `app/src/main/java/com/example/learningapp/MainActivity.kt` | 页面入口、查找控件、按钮事件、保存页面状态 |
+| `app/src/main/java/com/example/learningapp/feature/home/ui/MainActivity.kt` | 页面入口、查找控件、按钮事件、保存页面状态 |
 | `app/src/main/res/layout/activity_main.xml` | 文字、按钮、间距和垂直布局 |
 | `app/src/main/res/values/strings.xml` | 把显示文字集中放在资源文件中 |
 | `app/src/main/AndroidManifest.xml` | 注册应用与启动页面 |
@@ -66,10 +66,22 @@
 
 ## 中文注释与目录说明
 
-每个受版本管理的项目文件夹都有 `folder-guide.txt`。包含源码或配置的目录还有 `code-guide.txt`，按实际行号解释每条有效代码、XML 属性或配置。
+每个受版本管理的项目文件夹都有 `文件夹说明.txt`。包含源码或配置的目录还有 `逐行代码说明.txt`，按实际行号解释每条有效代码、XML 属性或配置。
 
 Kotlin、Gradle 配置和 XML 中也已加入中文注释。XML 属性的解释集中放在完整标签之前，避免向标签内部插入注释导致语法错误。空白行和注释本身不参与执行。
 
-官方 `gradlew`、`gradlew.bat` 保留原始内容，逐行中文讲解在根目录 `code-guide.txt`；二进制 JAR 的作用在 `gradle/wrapper/code-guide.txt`。TXT 文档位于资源目录时，应用构建配置会显式排除它们。
+官方 `gradlew`、`gradlew.bat` 保留原始内容，逐行中文讲解在根目录 `逐行代码说明.txt`；二进制 JAR 的作用在 `gradle/wrapper/逐行代码说明.txt`。TXT 文档位于资源目录时，应用构建配置会显式排除它们。
 
-从根目录的 `folder-guide.txt` 开始，可以逐层阅读。说明文档不需要复制到手机上。
+从根目录的 `文件夹说明.txt` 开始，可以逐层阅读。说明文档不需要复制到手机上。
+
+## 大应用结构学习版
+
+- 先读 [目录总览](文档/架构说明/目录总览.md) 和 [职责与依赖](文档/架构说明/职责与依赖.md)。
+- 首页 Activity 已移动到 `app/src/main/java/com/example/learningapp/feature/home/ui/MainActivity.kt`，清单中的注册位置已同步更新。
+- `feature` 按首页、登录、个人中心、设置划分，每个功能预留 `ui`、`domain`、`data`。
+- `core` 预留网络、数据库、偏好存储、共享类型、公共组件、小工具；另有 `navigation` 与 `di`。
+- 展示了 `debug`、`release`、`test`、`androidTest` 源码集；目前没有新增专用源码或可运行测试。
+- 每个文件夹都有《文件夹说明.txt》，原《folder-guide.txt》和《code-guide.txt》已改名为《文件夹说明.txt》和《逐行代码说明.txt》。
+- `app` 仍是唯一 Gradle 模块；新增包和目录不是独立的软件或 APK。
+
+新增目录以结构预留为主，不表示对应功能已经实现。继续学习请看 [从计数器到大应用](文档/学习路线/从计数器到大应用.md)。

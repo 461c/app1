@@ -1,0 +1,25 @@
+项目根目录
+路径：.
+
+职责：管理整个 Android 项目。app 是当前唯一的 Gradle 模块；文档和设计资料供人阅读，不参与应用构建。
+当前状态：现有项目：点击计数器；新增的是大应用结构示范。
+
+示例与边界：Android Studio 应打开此目录。
+
+本层结构：
+.gitignore：忽略本机配置和构建产物。
+README.md：运行教程及项目入口。
+app/（应用模块）：负责生成一个应用 APK，汇集应用代码、资源、清单和不同构建版本。
+build.gradle.kts：根项目管理插件版本，app 内配置应用构建。
+gradle/（构建工具配置）：保存 Gradle Wrapper 的配置与程序。
+gradle.properties：构建进程和代码格式配置。
+gradlew：macOS/Linux 的官方 Gradle 启动脚本。
+gradlew.bat：Windows 的官方 Gradle 启动脚本。
+settings.gradle.kts：注册 app 模块和下载仓库。
+文档/（学习与工程文档）：用中文记录结构、开发约定和后续学习步骤。
+设计资料/（设计资料）：保存实现之前的人类可读资料。
+文件夹说明.txt：本目录说明。
+逐行代码说明.txt：源码的逐行中文解释。
+
+从 README.md 或 文档/架构说明/目录总览.md 开始阅读。
+本次以文件夹结构和学习说明为主，没有实现登录、个人中心、设置等新界面。

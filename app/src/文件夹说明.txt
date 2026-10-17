@@ -1,0 +1,15 @@
+源码集合
+路径：app/src
+
+职责：main 放公共内容，debug/release 放版本专用内容，test/androidTest 放测试。
+当前状态：已包含 main 公共源码；其他源码集仅有说明文档。
+
+示例与边界：assembleDebug 使用 main + debug；assembleRelease 使用 main + release；测试源码在对应测试任务中编译。
+
+本层结构：
+androidTest/（设备端测试源码集合）：在模拟器或手机上验证界面和 Android 组件，通常会生成独立测试 APK。
+debug/（调试版本源码集合）：仅在构建 debug 版本时与 main 合并。
+main/（主源码集合）：所有应用构建版本共用的源码与资源。
+release/（发布版本源码集合）：仅在构建 release 版本时与 main 合并。
+test/（本地单元测试源码集合）：在电脑 JVM 上验证纯业务规则等，不放进应用 APK。
+文件夹说明.txt：本目录说明。

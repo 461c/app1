@@ -1,0 +1,15 @@
+页面布局
+路径：app/src/main/res/layout
+
+职责：放完整页面或可复用局部布局的 XML。
+当前状态：已有计数器首页布局。
+
+示例与边界：activity_main.xml 是现有首页；以后可用 activity_auth_login.xml、activity_profile.xml 等名称区分功能。
+
+本层结构：
+activity_main.xml：现有首页布局。
+文件夹说明.txt：本目录说明。
+逐行代码说明.txt：源码的逐行中文解释。
+
+TXT 只供学习，已通过 app/build.gradle.kts 的资源忽略规则排除。
+资源文件名采用小写英文、数字和下划线；不要把中文文件名当作布局、图片或资源名使用。

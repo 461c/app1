@@ -1,0 +1,11 @@
+代码根目录
+路径：app/src/main/java
+
+职责：Java、Kotlin 源码的起点；后面的路径与 package 包名对应。
+当前状态：已包含首页代码。
+
+示例与边界：com/example/learningapp 对应 com.example.learningapp。
+
+本层结构：
+com/（包名第一层）：com 是示例包名的一部分，只是命名层级，不表示一个独立软件。
+文件夹说明.txt：本目录说明。

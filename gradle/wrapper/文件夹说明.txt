@@ -1,0 +1,13 @@
+Gradle Wrapper
+路径：gradle/wrapper
+
+职责：启动脚本依赖这里的 JAR 和 properties，固定 Gradle 版本。
+当前状态：原有构建工具；JAR 保持不变。
+
+示例与边界：gradle-wrapper.jar 是二进制，不应作为文本修改。
+
+本层结构：
+gradle-wrapper.jar：官方二进制启动程序，保留原样。
+gradle-wrapper.properties：Gradle 下载版本与缓存配置。
+文件夹说明.txt：本目录说明。
+逐行代码说明.txt：源码的逐行中文解释。

@@ -1,0 +1,11 @@
+构建工具配置
+路径：gradle
+
+职责：保存 Gradle Wrapper 的配置与程序。
+当前状态：原有构建工具。
+
+示例与边界：wrapper 子目录不属于应用业务代码。
+
+本层结构：
+wrapper/（Gradle Wrapper）：启动脚本依赖这里的 JAR 和 properties，固定 Gradle 版本。
+文件夹说明.txt：本目录说明。

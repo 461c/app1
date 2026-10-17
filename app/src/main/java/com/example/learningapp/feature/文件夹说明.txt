@@ -1,0 +1,14 @@
+业务功能
+路径：app/src/main/java/com/example/learningapp/feature
+
+职责：先按业务划分 home、auth、profile、settings；功能内部再按 ui、domain、data 划分。
+当前状态：home/ui 已包含计数器页面；其他业务包为结构预留。
+
+示例与边界：这些都是同一个 app 模块内的包，不是独立 APK，也不是 Gradle 子模块。
+
+本层结构：
+auth/（登录注册）：后续放登录、注册、退出登录等流程。
+home/（首页）：已有点击计数器，后续可扩展首页列表或推荐内容。
+profile/（个人中心）：后续放用户资料展示与资料编辑。
+settings/（应用设置）：后续放主题、语言、通知开关等偏好设置。
+文件夹说明.txt：本目录说明。

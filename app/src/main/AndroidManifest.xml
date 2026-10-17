@@ -18,22 +18,22 @@
         <!-- MAIN + LAUNCHER 表示点击桌面图标时打开这个页面。 -->
         <!--
           注册 Activity 页面。
-          android:name=".MainActivity"：组件名或动作名；.MainActivity 指本应用包中的页面类，MAIN 表示主入口，LAUNCHER 表示桌面启动类别。
+          android:name=".feature.home.ui.MainActivity"：组件名或动作名；.feature.home.ui.MainActivity 指 namespace 下 feature.home.ui 包中的页面类，MAIN 表示主入口，LAUNCHER 表示桌面启动类别。
           android:exported="true"：true 表示允许应用外部启动这个页面，桌面启动器需要此设置。 > 表示起始标签结束，接下来可放子节点。
         -->
         <activity
-            android:name=".MainActivity"
+            android:name=".feature.home.ui.MainActivity"
             android:exported="true">
             <!--
               声明这个页面能够响应的启动意图。 > 表示起始标签结束，接下来可放子节点。
             -->
             <intent-filter>
                 <!--
-                  声明意图动作。 android:name="android.intent.action.MAIN"：组件名或动作名；.MainActivity 指本应用包中的页面类，MAIN 表示主入口，LAUNCHER 表示桌面启动类别。 /> 表示这个节点在此处结束，没有子节点。
+                  声明意图动作。 android:name="android.intent.action.MAIN"：组件名或动作名；.feature.home.ui.MainActivity 指 namespace 下 feature.home.ui 包中的页面类，MAIN 表示主入口，LAUNCHER 表示桌面启动类别。 /> 表示这个节点在此处结束，没有子节点。
                 -->
                 <action android:name="android.intent.action.MAIN" />
                 <!--
-                  声明意图类别。 android:name="android.intent.category.LAUNCHER"：组件名或动作名；.MainActivity 指本应用包中的页面类，MAIN 表示主入口，LAUNCHER 表示桌面启动类别。 /> 表示这个节点在此处结束，没有子节点。
+                  声明意图类别。 android:name="android.intent.category.LAUNCHER"：组件名或动作名；.feature.home.ui.MainActivity 指 namespace 下 feature.home.ui 包中的页面类，MAIN 表示主入口，LAUNCHER 表示桌面启动类别。 /> 表示这个节点在此处结束，没有子节点。
                 -->
                 <category android:name="android.intent.category.LAUNCHER" />
             <!-- 结束 intent-filter 节点。 -->

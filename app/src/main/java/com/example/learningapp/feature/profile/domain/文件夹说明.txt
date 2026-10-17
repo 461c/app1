@@ -1,0 +1,10 @@
+个人中心业务规则层
+路径：app/src/main/java/com/example/learningapp/feature/profile/domain
+
+职责：放需要复用或比较复杂的业务规则、业务模型和用例；简单功能可以直接由 ui 调用数据仓库，不必强行使用这一层。
+当前状态：结构预留：当前只有说明文档，相关功能尚未实现。
+
+示例与边界：将来可放业务校验或用例类；尽量不依赖 Activity、View 等 Android 界面类型。
+
+本层结构：
+文件夹说明.txt：本目录说明。

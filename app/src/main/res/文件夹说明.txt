@@ -1,0 +1,18 @@
+Android 资源
+路径：app/src/main/res
+
+职责：Android 固定资源目录。代码按功能拆包后，XML 资源在本模块内仍共享，资源名应避免冲突。
+当前状态：已有 layout、values；新增其他目录用于结构示范。
+
+示例与边界：layout 放布局；values 放文字颜色；drawable 放图形；menu 放菜单；xml 放配置。
+
+本层结构：
+drawable/（图片与图形）：放矢量图标、形状 XML、PNG/WebP 等。
+layout/（页面布局）：放完整页面或可复用局部布局的 XML。
+menu/（菜单资源）：放工具栏菜单、选项菜单等 XML。
+values/（文字颜色与主题）：集中定义字符串、颜色、尺寸、主题样式等简单资源。
+xml/（通用 XML 配置）：放由 Android 组件读取的配置资源。
+文件夹说明.txt：本目录说明。
+
+TXT 只供学习，已通过 app/build.gradle.kts 的资源忽略规则排除。
+资源文件名采用小写英文、数字和下划线；不要把中文文件名当作布局、图片或资源名使用。

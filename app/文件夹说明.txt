@@ -1,0 +1,13 @@
+应用模块
+路径：app
+
+职责：负责生成一个应用 APK，汇集应用代码、资源、清单和不同构建版本。
+当前状态：已有可用源码；构建仍需本机 JDK 17 和 Android SDK。
+
+示例与边界：build.gradle.kts：应用配置；src：所有源码集合。
+
+本层结构：
+build.gradle.kts：根项目管理插件版本，app 内配置应用构建。
+src/（源码集合）：main 放公共内容，debug/release 放版本专用内容，test/androidTest 放测试。
+文件夹说明.txt：本目录说明。
+逐行代码说明.txt：源码的逐行中文解释。

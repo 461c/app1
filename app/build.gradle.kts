@@ -31,8 +31,8 @@ android {
 
     // 开始配置 Android 资源处理规则；下面的规则让资源目录可以放学习用 TXT。
     androidResources {
-        // 保留常见默认忽略规则，并排除 folder-guide.txt、code-guide.txt，防止说明文档参与资源编译；冒号分隔匹配规则。
-        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!folder-guide.txt:!code-guide.txt"
+        // 保留常见默认忽略规则，并排除 文件夹说明.txt、逐行代码说明.txt，防止说明文档参与资源编译；冒号分隔匹配规则。
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!文件夹说明.txt:!逐行代码说明.txt"
     // 结束资源处理配置块。
     }
 

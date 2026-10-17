@@ -1,0 +1,10 @@
+登录注册数据层
+路径：app/src/main/java/com/example/learningapp/feature/auth/data
+
+职责：放本功能的数据仓库及数据转换。仓库协调网络与本地来源，界面不直接操作底层网络客户端或数据库。
+当前状态：结构预留：当前只有说明文档，相关功能尚未实现。
+
+示例与边界：将来可放 AuthRepository.kt；底层通用能力使用 core 下的封装。
+
+本层结构：
+文件夹说明.txt：本目录说明。

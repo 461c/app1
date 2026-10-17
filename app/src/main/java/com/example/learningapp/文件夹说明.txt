@@ -1,0 +1,14 @@
+应用代码总入口
+路径：app/src/main/java/com/example/learningapp
+
+职责：按照功能和公共能力组织代码。feature 是业务功能，core 是跨功能基础能力，navigation 管跳转，di 管对象组装。
+当前状态：已有首页代码；其余主要是结构预留。
+
+示例与边界：首页 Activity 已移动到 feature/home/ui；应用的 applicationId 与 namespace 仍为 com.example.learningapp。
+
+本层结构：
+core/（公共基础能力）：放确实被多个业务功能使用的能力。某个功能专用的代码继续放在该功能中，避免 core 变成杂物堆。
+di/（对象组装）：创建并连接界面、数据仓库和公共服务；di 是 Dependency Injection 的缩写。
+feature/（业务功能）：先按业务划分 home、auth、profile、settings；功能内部再按 ui、domain、data 划分。
+navigation/（页面导航）：集中表达页面目的地和跳转约定，避免业务页面互相依赖过多。
+文件夹说明.txt：本目录说明。

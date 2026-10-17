@@ -1,0 +1,55 @@
+文件：AndroidManifest.xml
+下面的 L 行号对应当前源码；修改源码后，行号可能变化。
+空白行只用于分段；已有注释在源码中直接阅读。
+
+L1: <?xml version="1.0" encoding="utf-8"?>
+解释：XML 声明：版本为 1.0，文件编码为 UTF-8，必须位于文件开头。
+
+L5: <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+解释：Android 应用清单的根节点。 xmlns:android="http://schemas.android.com/apk/res/android"：声明 android 属性前缀对应的 XML 命名空间，后续 android: 属性依靠它解析。 > 表示起始标签结束，接下来可放子节点。
+
+L13:     <application
+解释：声明应用级属性；其中包含页面等组件。
+
+L14:         android:allowBackup="false"
+解释：android:allowBackup="false"：false 表示关闭系统应用备份。
+
+L15:         android:label="@string/app_name"
+解释：android:label="@string/app_name"：引用 strings.xml 中的 app_name 作为应用名称。
+
+L16:         android:supportsRtl="true"
+解释：android:supportsRtl="true"：true 表示声明支持从右向左的布局方向。
+
+L17:         android:theme="@style/Theme.LearningApp">
+解释：android:theme="@style/Theme.LearningApp"：使用 values/themes.xml 中定义的应用主题。 > 表示起始标签结束，接下来可放子节点。
+
+L24:         <activity
+解释：注册 Activity 页面。
+
+L25:             android:name=".feature.home.ui.MainActivity"
+解释：android:name=".feature.home.ui.MainActivity"：组件名或动作名；.feature.home.ui.MainActivity 指 namespace 下 feature.home.ui 包中的页面类，MAIN 表示主入口，LAUNCHER 表示桌面启动类别。
+
+L26:             android:exported="true">
+解释：android:exported="true"：true 表示允许应用外部启动这个页面，桌面启动器需要此设置。 > 表示起始标签结束，接下来可放子节点。
+
+L30:             <intent-filter>
+解释：声明这个页面能够响应的启动意图。 > 表示起始标签结束，接下来可放子节点。
+
+L34:                 <action android:name="android.intent.action.MAIN" />
+解释：声明意图动作。 android:name="android.intent.action.MAIN"：组件名或动作名；.feature.home.ui.MainActivity 指 namespace 下 feature.home.ui 包中的页面类，MAIN 表示主入口，LAUNCHER 表示桌面启动类别。 /> 表示这个节点在此处结束，没有子节点。
+
+L38:                 <category android:name="android.intent.category.LAUNCHER" />
+解释：声明意图类别。 android:name="android.intent.category.LAUNCHER"：组件名或动作名；.feature.home.ui.MainActivity 指 namespace 下 feature.home.ui 包中的页面类，MAIN 表示主入口，LAUNCHER 表示桌面启动类别。 /> 表示这个节点在此处结束，没有子节点。
+
+L40:             </intent-filter>
+解释：结束 intent-filter 节点。
+
+L42:         </activity>
+解释：结束 activity 节点。
+
+L44:     </application>
+解释：结束 application 节点。
+
+L46: </manifest>
+解释：结束 manifest 节点。
+

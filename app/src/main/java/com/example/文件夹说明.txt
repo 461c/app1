@@ -1,0 +1,9 @@
+包名第二层
+路径：app/src/main/java/com/example
+
+职责：example 表示示例项目；不代表需要注册域名。
+当前状态：已有命名层级。
+
+本层结构：
+learningapp/（应用代码总入口）：按照功能和公共能力组织代码。feature 是业务功能，core 是跨功能基础能力，navigation 管跳转，di 管对象组装。
+文件夹说明.txt：本目录说明。
